@@ -1,0 +1,172 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dashboard</title>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+  
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  
+    <link rel="stylesheet" href="{% static 'plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+</head>
+<body>
+    <body class="hold-transition sidebar-mini layout-fixed">
+        <div class="wrapper">
+        
+            <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+                <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="index3.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="#" class="nav-link">Contact</a>
+                </li>
+                </ul>
+        
+            </nav>
+        
+        
+        
+        
+            <aside class="main-sidebar elevation-4" style="background-color: #2f89fc;">
+               
+        
+                <div class="sidebar" style="color: aliceblue">
+        
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="#" class="d-block" style="color: aliceblue">Name</a>
+                    </div>
+                </div>
+                <hr style="color: aliceblue;">
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            
+                    <li class="nav-item">
+                        <a href="pages/widgets.html" class="nav-link">
+                        <i class="nav-icon fas fa-th" style="color: aliceblue"></i>
+                        <p style="color: aliceblue">
+                        Widgets
+                        </p>
+                        </a>
+                    </li>
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-copy" style="color: aliceblue"></i>
+                            <p style="color: aliceblue">
+                                Layout Options
+                                <i class="fas fa-angle-left right" style="color: aliceblue"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="pages/layout/top-nav.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon" style="color: aliceblue"></i>
+                                    <p style="color: aliceblue">Temperature</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pages/layout/boxed.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon" style="color: aliceblue"></i>
+                                    <p style="color: aliceblue">Humidity</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pages/layout/fixed-sidebar.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon" style="color: aliceblue"></i>
+                                    <p style="color: aliceblue">Pulse Rate</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pages/layout/fixed-topnav.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon" style="color: aliceblue"></i>
+                                    <p style="color: aliceblue">Live Location</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">
+                                <i class="nav-icon fas fa-cog" style="color: aliceblue;"></i>
+                                <p style="color: aliceblue;">Settings</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">
+                                <i class="nav-icon fas fa-power-off" style="color: aliceblue;"></i>
+                                <p style="color: aliceblue;">LogOut</p>
+                            </a>
+                        </li>
+                    </li>
+                    </ul>
+                </nav>
+                </div>
+            </aside>
+
+            <div class="content-wrapper">
+                <div class="content-header">
+                  <div class="container-fluid">
+                      {% if messages %}
+                      {% for message in messages %}
+                      <p {% if message.tags %} class = "alert alert-success" class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+                      {% endfor %}
+                      {% endif %}
+                      <form method = "POST" action = "location" >    
+                          {% csrf_token %}
+                          <div class="form-group ">
+                            <strong>Enter Latitude:</strong>
+                            <input required name = "latitude" type = number class="form-control">
+                          </div>
+                          <div class="form-group">
+                            <label>Enter Longitude:</label>
+                            <input required name = "longitude" type = number class="form-control">
+                          </div>
+                          <p style="text-align: center;">Use Google API for the same.</p> 
+                          <input type = "submit" value = "submit" class="btn btn-success" style="display: block;margin-right: auto;margin-left: auto;">
+                      </form>
+                      <p style="text-align: center;">OR </p>
+                      <p style="text-align: center;">Click <button class="btn btn-info" id = "mylocation" onclick = "getLocation()" type = "btn btn-primary">here</button> to get current location.</p>
+                  </div>
+                </div>
+            </div>
+</div>
+    <script>
+        function getLocation() {
+        if (navigator.geolocation) {
+           navigator.geolocation.getCurrentPosition(showPosition);
+        }
+        }
+
+        function showPosition(position) {
+            var lat = position.coords.latitude;
+            var long = position.coords.longitude;
+            $.ajax({
+                url: "/location/"+lat+'/'+long,
+                type: "GET",
+                dataType: "json",
+                data: {
+                    },
+                success : function(json) {
+                    alert("Location send to Django");
+                },
+                error : function(xhr,errmsg,err) {
+                    alert("Could not send location to Django. Error: " + xhr.status + ": " + xhr.responseText);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+      .msgcolor{
+        color: red;
+      }
+      .msgcolor1{
+        color: yellow;
+      }
+    </style>
+</head>
+{% block javascript %}
+  <script>
+     setInterval(alertFunc, 3000);
+
+    function alertFunc() {
+      $.ajax({
+        url: '/base3',
+         data: {
+         },
+        dataType: 'json',
+        success: function (data) {
+          document.getElementById("messages").innerHTML = data.message;
+          if (data.message=="Danger") {
+            $("#messages").addClass("msgcolor");
+          }
+          else{
+            $("#messages").addClass("msgcolor1");
+          }
+        }
+
+      });
+
+    }
+
+  </script>
+{% endblock %}
+
+<body>
+    <p id = "messages">Hello</p>
+    
+</body>
+</html>

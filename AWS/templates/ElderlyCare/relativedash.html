@@ -1,0 +1,252 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Dashboard</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
+
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+  <link rel="stylesheet" href="{% static 'plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' %}">
+  <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+
+  <!-- 
+
+  <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+  
+  
+
+  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+
+  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+
+  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> -->
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="index3.html" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="#" class="nav-link">Contact</a>
+        </li>
+        </ul>
+
+    </nav>
+
+
+
+
+    <aside class="main-sidebar elevation-4" style="background-color: #2f89fc;">
+       
+
+        <div class="sidebar" style="color: aliceblue">
+
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info">
+                <a href="#" class="d-block" style="color: aliceblue">Name</a>
+            </div>
+        </div>
+        <hr style="color: aliceblue;">
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+    
+            <li class="nav-item">
+                <a href="pages/widgets.html" class="nav-link">
+                <i class="nav-icon fas fa-th" style="color: aliceblue"></i>
+                <p style="color: aliceblue">
+                Widgets
+                </p>
+                </a>
+            </li>
+            <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-copy" style="color: aliceblue"></i>
+                    <p style="color: aliceblue">
+                        Layout Options
+                        <i class="fas fa-angle-left right" style="color: aliceblue"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="pages/layout/top-nav.html" class="nav-link">
+                            <i class="far fa-circle nav-icon" style="color: aliceblue"></i>
+                            <p style="color: aliceblue">Temperature</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/layout/boxed.html" class="nav-link">
+                            <i class="far fa-circle nav-icon" style="color: aliceblue"></i>
+                            <p style="color: aliceblue">Humidity</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/layout/fixed-sidebar.html" class="nav-link">
+                            <i class="far fa-circle nav-icon" style="color: aliceblue"></i>
+                            <p style="color: aliceblue">Pulse Rate</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/layout/fixed-topnav.html" class="nav-link">
+                            <i class="far fa-circle nav-icon" style="color: aliceblue"></i>
+                            <p style="color: aliceblue">Live Location</p>
+                        </a>
+                    </li>
+                </ul>
+                <li class="nav-item">
+                    <a href="" class="nav-link">
+                        <i class="nav-icon fas fa-cog" style="color: aliceblue;"></i>
+                        <p style="color: aliceblue;">Settings</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">
+                        <i class="nav-icon fas fa-power-off" style="color: aliceblue;"></i>
+                        <p style="color: aliceblue;">LogOut</p>
+                    </a>
+                </li>
+            </li>
+            </ul>
+        </nav>
+        </div>
+    </aside>
+
+
+    <div class="content-wrapper">
+        <div class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Relative Dashboard</h1>
+              </div>
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active">My Dashboard</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        
+    
+        
+
+
+
+        <section class="content">
+            <div class="container-fluid">
+              <!-- Small boxes (Stat box) -->
+              <div class="row">
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                  <!-- small box -->
+                  <div class="small-box bg-success">
+                    <div class="inner">
+                      <h3>Set</h3>
+      
+                      <p>Parameters</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-pen"></i>
+                    </div>
+                    <a href="/location" class="small-box-footer">Enter <i class="fas fa-arrow-circle-right"></i></a>
+                  </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                  <!-- small box -->
+                  <div class="small-box " id="change">
+                    <div class="inner">
+                      <h3>Status</h3>
+      
+                      <p id="messages"></p>
+                    </div>
+                    <div class="icon" >
+                      <i id="icon"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </section>
+    </div>  
+</div>
+{% block javascript %}
+  <script>
+     setInterval(alertFunc, 3000);
+
+    function alertFunc() {
+      $.ajax({
+        url: '/base3',
+         data: {
+         },
+        dataType: 'json',
+        success: function (data) {
+          document.getElementById("messages").innerHTML = data.message;
+          if (data.message=="Danger") {
+            $("#change").addClass("bg-warning");
+            $("#icon").addClass("fas fa-exclamation-triangle");
+          }
+          else{
+            $("#change").addClass("bg-success");
+            $("#icon").addClass("fas fa-thumbs-up");
+
+          }
+        }
+
+      });
+
+    }
+
+  </script>
+{% endblock %}
+
+
+<script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+
+<script src="{% static 'plugins/jquery-ui/jquery-ui.min.js' %}"></script>
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="{% static 'plugins/sparklines/sparkline.js' %}"></script>
+<script src="{% static 'plugins/jqvmap/jquery.vmap.min.js' %}"></script>
+<script src="{% static 'plugins/jqvmap/maps/jquery.vmap.usa.js' %}"></script>
+<script src="{% static 'plugins/jquery-knob/jquery.knob.min.js' %}"></script>
+<script src="{% static 'plugins/moment/moment.min.js' %}"></script>
+<script src="{% static 'plugins/daterangepicker/daterangepicker.js' %}"></script>
+<script src="{% static 'plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+<script src="{% static 'plugins/summernote/summernote-bs4.min.js' %}"></script>
+<script src="{% static 'plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js' %}"></script>
+<script src="{% static 'dist/js/adminlte.js' %}"></script>
+<script src="{% static 'dist/js/pages/dashboard.js' %}"></script>
+<script src="{% static 'dist/js/demo.js' %}"></script>
+
+
+
+</body>
+</html>

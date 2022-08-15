@@ -1,0 +1,12 @@
+*.pyc
+*~
+/.vscode
+__pycache__
+myvenv
+AWS/migrations
+db.sqlite3
+/static
+.DS_Store
+*.pkl
+*.csv
+*.pickle

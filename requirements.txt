@@ -1,0 +1,7 @@
+Django~=3.0
+django-background-tasks
+requests
+twilio
+scikit-learn
+pandas
+django-chartjs
