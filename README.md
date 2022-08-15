@@ -1,4 +1,4 @@
-# Elderly-Care---SIH-2020 Project
+# Elderly-Care-SIH-2020 Project
 ## Technology Stack :  
 Internet of Things (IoT) 
 Cloud Computing 
